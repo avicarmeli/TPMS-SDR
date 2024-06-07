@@ -3,8 +3,17 @@
 extern void AudibleAlarmOnOff();
 extern void AudibleAlarmReminder();
 
-Ticker AudibleAlarmSoundTimer(AudibleAlarmOnOff, 1000, 1, MILLIS);
-Ticker AudibleAlarmReminderTimer(AudibleAlarmReminder, AUDIBLE_ALARM_REMINDER_TIME_MS, 1, MILLIS);
+#ifdef ESP32
+  TickTwo  AudibleAlarmSoundTimer(AudibleAlarmOnOff, 1000, 1, MILLIS);
+  TickTwo  AudibleAlarmReminderTimer(AudibleAlarmReminder, AUDIBLE_ALARM_REMINDER_TIME_MS, 1, MILLIS);
+#elif
+  Ticker AudibleAlarmSoundTimer(AudibleAlarmOnOff, 1000, 1, MILLIS);
+  Ticker AudibleAlarmReminderTimer(AudibleAlarmReminder, AUDIBLE_ALARM_REMINDER_TIME_MS, 1, MILLIS);
+#endif
+
+
+
+
 
 boolean IsAlarmActive()
 {//check if alarm is active (including reminder timer running)
