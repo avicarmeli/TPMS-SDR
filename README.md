@@ -1,4 +1,4 @@
-# TPMS Arduino code to read RF Tpms Sensors
+# TPMS Arduino code to read RF TPMS Sensors
 Project using Arduino and CC1101 SDR to display the tyre pressures transmitted at 387-464MHz by the tyres sensors (based on Toyota TPMS project).
 ## Intent:
 - Porting the code to ESP32.
