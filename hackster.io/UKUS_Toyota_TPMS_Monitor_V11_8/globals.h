@@ -132,6 +132,19 @@
    const int16_t LED_RX = LED_BUILTIN;
    const int16_t MAXBITS = 200;
    const int16_t MAXTIMINGS = 255;
+#elif ESP32
+#define PROC_TYPE "ESP32"
+   #define USE_GPIO_Dx 0
+   // pins setting as per: https://github.com/NorthernMan54/rtl_433_ESP/blob/main/example/OOK_Receiver/README.md
+   const int16_t RXPin = 4;   //must be an ext interrupt pin
+   const int16_t CDPin = 22;  //if wired, define 'USE_HW_CD' above, otherwise CD pin status is received over SPI
+   const int16_t CC1101_CS = 5;  // Define the Chip Select pin
+   const int16_t AUDIBLE_ALARM_PIN = 8;
+   const int16_t DEBUGPIN = 0;  //use the TX LED pin
+   const int16_t LED_RX = 2;
+   const int16_t MAXBITS = 1000;
+   const int16_t MAXTIMINGS = 900;
+
 #else
    #error No configuration set up for this processor type in globals.h
 #endif
@@ -643,5 +656,8 @@ enum RXStates
 
 
 #ifdef USE_TEST_TIMINGS
+      const int16_t TestTimings_len = sizeof(TestTimings)/sizeof(TestTimings[0]);
+#endif
+
       const int16_t TestTimings_len = sizeof(TestTimings)/sizeof(TestTimings[0]);
 #endif
