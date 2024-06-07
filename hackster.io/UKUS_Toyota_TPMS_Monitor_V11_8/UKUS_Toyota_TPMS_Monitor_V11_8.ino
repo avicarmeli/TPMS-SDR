@@ -65,16 +65,21 @@
 //        Fixed bug in Toyota_PMV_C210 around line 426,, DecodeBitArray call was missing a parameter and therefore calling the wrong instance. 
 //        This caused the search for possible alternative valid checksum somewhere in the sequence to have always failed
 //        Adjusted Deviation, data rate, AGC settings for PMV107J (US - 315MHz) as recommended by Andrey Oleynik to improve reception
+//V11.9   Ported to ESP32 by Avi Carmeli
 
-
-#define VERSION "11.8"
+#define VERSION "11.9"
 
 
 #include <SPI.h>
 
 #include "configs.h"
 #include "globals.h"
-#include <Ticker.h>
+
+#ifdef ESP32
+  #include "TickTwo.h"
+#elif
+  #include <Ticker.h>
+#endif
 
 
 #include "CommonFunctionDeclarations.h"
@@ -131,8 +136,14 @@
 #include "cc1101.h"
 #include "Common.h"
 
-Ticker displayflashtimer(DisplayTimerExpired,NOBLANK_MS, 0, MILLIS);
-Ticker SignalRefreshTimer(SignalRefreshRequired, SIGNALREFRESHTIMING, 0, MILLIS);
+#ifdef ESP32
+  TickTwo displayflashtimer(DisplayTimerExpired,NOBLANK_MS, 0, MILLIS);
+  TickTwo SignalRefreshTimer(SignalRefreshRequired, SIGNALREFRESHTIMING, 0, MILLIS);
+#elif
+  Ticker displayflashtimer(DisplayTimerExpired,NOBLANK_MS, 0, MILLIS);
+  Ticker SignalRefreshTimer(SignalRefreshRequired, SIGNALREFRESHTIMING, 0, MILLIS);
+#endif
+
 
 void UpdateTimers()
 {
@@ -218,13 +229,13 @@ void setup() {
 
 
 
-
   pinMode(LED_RX, OUTPUT);
   pinMode(RXPin, INPUT);
   pinMode(CDPin, INPUT);
 
-  delay(2000);
 
+  delay(2000);
+   
   #ifdef ENABLE_AUDIBLE_ALARM
     pinMode(AUDIBLE_ALARM_PIN, OUTPUT);
     digitalWrite(AUDIBLE_ALARM_PIN,!Audible_AlarmPin_Active);
@@ -449,6 +460,8 @@ void setup() {
   #ifdef USE_LCDDISPLAY
       SignalRefreshTimer.start();
   #endif
+
+  Serial.print(F(" entering LOOP"));
 }
 
 
@@ -458,7 +471,7 @@ void loop() {
 #ifdef USE_TEST_TIMINGS
   static uint32_t lastts = millis();
 #endif
-
+ 
 
   if (millis() - LastCalTime > CAL_PERIOD_MS)
   {
