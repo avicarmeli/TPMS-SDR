@@ -1,7 +1,7 @@
 
 //Select the display type being used:
 //#define USE_1_INCH_YB_I2C_DISPLAY 1
-#define USE_2_INCH_ST7735_DISPLAY 1
+//#define USE_2_INCH_ST7735_DISPLAY 1
 //#define USE_2_INCH_ST7789_DISPLAY 1  //(round display)
 //#define USE_24_INCH_ILI9341_DISPLAY 1
 
@@ -12,12 +12,12 @@
 
 //Vehicle/sensor type
 //#define Toyota_TRW_C070 1
-#define Toyota_PMV_C210 1   //Toyota Auris, should also work for PMV-C010?? and PMV-C215 (Toyota Corolla)
+//#define Toyota_PMV_C210 1   //Toyota Auris, should also work for PMV-C010?? and PMV-C215 (Toyota Corolla)
 //#define Hyundai_i35 1  //uses PMV-C210 sensor
 //#define Schrader_C1100 1  //used on Hyundai Tucson TL/TLE 01/2015-12/2015
 //#define Schrader_A9054100 1
 //#define Toyota_PMV_107J 1   //used on Lexus RX series 07/2013-09/2015
-//#define Renault 1
+#define Renault 1
 //#define Zoe 1   //for Renault Zoe 09/2012 to 06/2019 only (you must select 'Renault' define as well for this!)
 //#define Dacia 1
 //#define NissanLeaf 1
@@ -65,7 +65,7 @@
 #define ENABLE_PRESSURE_ALARMS 1
 #define ENABLE_TEMPERATURE_ALARMS 1
 
-#define ENABLE_AUDIBLE_ALARM 1
+//#define ENABLE_AUDIBLE_ALARM 1
 
 #define ENABLE_PRESSURE_ALARM_TEMPERATURE_COMPENSATION 1
 
@@ -90,10 +90,10 @@
 #endif
 
 //tyre IDs for vehicle....(may need to prefix known IDs with leading 'F' to match reception)
-  #define FRONT_LEFT  0x01721EB0L
-  #define FRONT_RIGHT 0x0172221FL
-  #define REAR_LEFT   0x0172223EL
-  #define REAR_RIGHT  0x01721E9AL
+  #define FRONT_LEFT  0x03145D  
+  #define FRONT_RIGHT 0x031464  
+  #define REAR_LEFT   0x031426
+  #define REAR_RIGHT  0x03144C
   #define SPARE       0x01FFFFFFL
   #define WINTER_FRONT_LEFT  0x02721EB0L
   #define WINTER_FRONT_RIGHT 0x0272221FL
@@ -111,9 +111,9 @@ int Ford_SensorType = FordType;  //3 different types seen, select 0,1,2 to match
 const float PressureLimitsTemperature = 20;
 const  double PressureLowLimits[]
 {
-  30, 30, 
-  30, 30,
-  30
+  28, 28, 
+  28, 28,
+  28
   #ifdef INCLUDE_WINTER_SET
     , 30, 30, 
     30, 30,
@@ -148,9 +148,9 @@ const float  TemperatureLowLimits[]
 
 const float  TemperatureHighLimits[]
 {
-  33, 33, 
-  33, 33,
-  33
+  43, 43, 
+  43, 43,
+  43
   #ifdef INCLUDE_WINTER_SET
     , 33, 33, 
     33, 33,
