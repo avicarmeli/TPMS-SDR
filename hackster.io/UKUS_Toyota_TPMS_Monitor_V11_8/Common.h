@@ -1,5 +1,15 @@
-extern Ticker SignalRefreshTimer;
-extern Ticker displayflashtimer;
+#ifdef ESP32
+  extern TickTwo SignalRefreshTimer;
+  extern TickTwo displayflashtimer;
+#elif
+  extern Ticker SignalRefreshTimer;
+  extern Ticker displayflashtimer;
+#endif
+
+
+
+
+
 
 #define CD_END_DELAY_TIME  2500
 
