@@ -1,4 +1,4 @@
-#The TPMS BLE "manufacturer data" format
+# The TPMS BLE "manufacturer data" format
 The devices cannot be connected or paired to and the devices do not receive any incoming BLE data. All data is broadcast as part of the "Manufacturer data" portion of the BLE advertisement. Manufacturer data looks like this:
 
 000180EACA108A78E36D0000E60A00005B00
