@@ -2,7 +2,7 @@
 I use TZT CC1101 module which can be found in [Aliexpress](https://www.aliexpress.com/item/1005005933665919.html?spm=a2g0o.productlist.main.3.2131pz7Rpz7RXf&algo_pvid=fc90ba35-bb6c-4322-b737-ac4796d84784&algo_exp_id=fc90ba35-bb6c-4322-b737-ac4796d84784-1&pdp_npi=4%40dis%21ILS%2130.88%2110.04%21%21%2158.54%2119.04%21%402103868a17181114749364331e38fc%2112000034910422590%21sea%21IL%21127988983%21&curPageLogUid=FZ8SkkxsdQcS&utparam-url=scene%3Asearch%7Cquery_from%3A) for about 2.5$
 It is a 8 pin module with onboard SMA antenna connector as seen in the next picture:
 
-![OKY3364-CC1101-Wireless-Module-SMA-Antenna-2-600x600](https://github.com/avicarmeli/TPMS-SDR/assets/32562196/97919e9e-891e-4fe3-993f-d3ae11f020bd)
+![image](https://github.com/avicarmeli/TPMS-SDR/assets/32562196/f87c9988-4278-432e-b53f-0af323332d9d)
 
 The module pinout is described in the nex picture:
 
