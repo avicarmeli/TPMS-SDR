@@ -22,4 +22,4 @@ Specificly this project is aimed at forwording the TPMS data to [TPMS Advancved 
 - **Total                under 7$**
 
 ### Wiering:
-See wiering diagram in [DOCS]().
+See wiering diagram in [DOCS](https://github.com/avicarmeli/TPMS-SDR/blob/main/Docs/ESP-SDR%20connection%20diagram.md).
