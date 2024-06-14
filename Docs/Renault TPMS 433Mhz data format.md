@@ -1,9 +1,9 @@
-## Renault TPMS 433Mhz data Format
+# Renault TPMS 433Mhz data Format
 
 FSK 9 byte Manchester encoded TPMS with CRC.
 Seen on Renault Clio, Renault Captur and maybe Dacia Sandero.
 
-**Packet nibbles:**
+## **Packet nibbles:**
 
    ** F F/P PP TT II II II ?? ?? CC**
 
