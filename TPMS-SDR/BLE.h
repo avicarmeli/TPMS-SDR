@@ -107,7 +107,7 @@
     // Start advertising
     BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
     
-    ble_advertise_tpms(0, 27.3f , 35.0f);
+    //ble_advertise_tpms(0, 27.3f , 35.0f);
  
   }
 
