@@ -12,7 +12,7 @@ Specificly this project is aimed at forwording the TPMS data to [TPMS Advancved 
 
 ## Intent:
 - [X] Porting the code to ESP32.
-- [ ] Sending sensors data over BLE to imitate Sysgration BLE sensors so it can be displayed in cellphone app.
+- [X] Sending sensors data over BLE to imitate Sysgration BLE sensors so it can be displayed in cellphone app.
 
 ## Hardware:
 ### Components:
