@@ -15,5 +15,5 @@
 | D5 | 4 | CSn |
 | D18 | 5 | SCK |
 | D19 | 7 | MISO/GDO1 |
-| D22 | 3 | DGO0 |
+| D22 | 3 | GDO0 |
 | D23 | 6 | MOSI |
