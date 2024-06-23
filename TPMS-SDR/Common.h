@@ -1110,6 +1110,10 @@ void UpdateTPMSData(int16_t index, uint32_t ID, uint16_t status, float Temperatu
       }
 
   #endif
+
+  #if defined(ESP32) && defined(USE_BLE)
+  ble_advertise_tpms(index, Temperature, Pressure); // send sensor data to BLE Avi carmeli 06/24
+  #endif
   
   bitSet(TPMSChangeBits,index);
   
