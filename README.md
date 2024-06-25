@@ -25,3 +25,41 @@ Specificly this project is aimed at forwording the TPMS data to [TPMS Advancved 
 
 ### Wiering:
 See wiering diagram in [DOCS](https://github.com/avicarmeli/TPMS-SDR/blob/main/Docs/ESP-SDR%20connection%20diagram.md).
+
+## Code:
+### installation:
+#### Prerequests:
+- Arduino IDE.
+- ESP32 Board (I use DEV Kit).
+- CC1101 Board (I use 8 pins TZT CC1101).
+- Install in Arduio IDE the following libraries:
+  - TickTwo
+  - BLEDevice
+  - BLEUtils.h
+  - BLEServer.h
+- locate the directory where Arduino IDE stores the projects (for windows usually in Arduino folder under DOCS).
+- Download Zip file of the repo using the Green **Code** pull down on the upper right corner of this page.
+- Unzip the foldeer into the Arduino projects folder you located.
+
+#### Configs:
+- Opened Arduino IDE.
+- Open the TPMS-SDR project.
+- Navigate to the *configs.h* tab and at line 93 insert you RF TPMS ID for each tire.
+- Make sure to select in the config.h file the type of car sensors you have.
+- Under Tools menu select your board type.
+- Connect your board to the USB port.
+- Under the Tools menu select your COM port.
+
+#### Upload:
+- Hit the upload button on the upper left corner (right arrow icon).
+- If there are any errors follow the messages (most likely it is missing library).
+- Depend on the board you use you might need to manually put your board into upload mode (usually holding both push buttons then releasing the reset butteon and only after a second or so the other button).
+- When upload is done you might need to reset the board again.
+
+#### Configuring TPMS advanced to recieve BLE data from TPMS SDR:
+- Install [TPMS Advanced](https://github.com/VincentMasselis/TPMS-advanced/tree/dedad01dee84f4cdff2c9a677efd3221a9e1d25d) from [Play](https://play.google.com/store/apps/details?id=com.masselis.tpmsadvanced) store.
+- Open The app.
+- On the upper left choose bind sensors then select SCAN QR Code Sysgration sensors.
+- Scan This [QR](https://github.com/avicarmeli/TPMS-SDR/blob/main/Docs/TPMS%20Advanced%20QR%20code%20Format.md) code.
+- You are done.
+- Data will show up in the TPMS advanced app only when sensors are transmitting (some cars sensors transmit only after certain speed was reached).
