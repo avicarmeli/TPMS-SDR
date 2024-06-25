@@ -4,6 +4,7 @@
 
 
 
+
 #define SHOWVALIDTPMS 1
 #define SHOWDEBUGINFO 1
 //#define IGNORECHECKSUMERRORS 1
@@ -144,6 +145,7 @@
    const int16_t LED_RX = 2;
    const int16_t MAXBITS = 1000;
    const int16_t MAXTIMINGS = 900;
+#define USE_BLE 1  // for BLE only with ESP32 for now
 
 #else
    #error No configuration set up for this processor type in globals.h
@@ -659,5 +661,5 @@ enum RXStates
       const int16_t TestTimings_len = sizeof(TestTimings)/sizeof(TestTimings[0]);
 #endif
 
-      const int16_t TestTimings_len = sizeof(TestTimings)/sizeof(TestTimings[0]);
-#endif
+//      const int16_t TestTimings_len = sizeof(TestTimings)/sizeof(TestTimings[0]);
+//#endif

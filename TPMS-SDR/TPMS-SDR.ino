@@ -66,8 +66,9 @@
 //        This caused the search for possible alternative valid checksum somewhere in the sequence to have always failed
 //        Adjusted Deviation, data rate, AGC settings for PMV107J (US - 315MHz) as recommended by Andrey Oleynik to improve reception
 //V11.9   Ported to ESP32 by Avi Carmeli
+//V12.0   BLE sending data to TPMS Advanced app https://github.com/VincentMasselis/TPMS-advanced/tree/dedad01dee84f4cdff2c9a677efd3221a9e1d25d
 
-#define VERSION "11.9"
+#define VERSION "12.0"
 
 
 #include <SPI.h>
@@ -79,6 +80,10 @@
   #include "TickTwo.h"
 #elif
   #include <Ticker.h>
+#endif
+
+#ifdef USE_BLE
+  #include "BLE.h"
 #endif
 
 
@@ -450,6 +455,10 @@ void setup() {
   
   setRxState();
   Flush_RX_FIFO(true);
+
+    #if defined(ESP32) && defined(USE_BLE)
+      init_ble();
+    #endif
 
    #if defined(ENABLE_PRESSURE_ALARMS) || defined(ENABLE_TEMPERATURE_ALARMS)
      displayflashtimer.start();
