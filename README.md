@@ -55,6 +55,24 @@ See wiering diagram in [DOCS](https://github.com/avicarmeli/TPMS-SDR/blob/main/D
 - If there are any errors follow the messages (most likely it is missing library).
 - Depend on the board you use you might need to manually put your board into upload mode (usually holding both push buttons then releasing the reset butteon and only after a second or so the other button).
 - When upload is done you might need to reset the board again.
+- Succssesfull run will yield the next out put:
+
+~~~
+STARTING...
+Software version 11.9
+Configured for processor type ESP32
+No LCD display configured - Serial output only
+Resetting CC1101 .....
+CC1101 reset successful
+CC1101 configured for UK (433MHz)and Renault TPMS sensor
+CC1101 Part no: 0
+CC1101 Version: 4
+Config verification OK
+Preset IDs:   0x3145D, 0x31464, 0x31426, 0x3144C, 0x1FFFFFF
+             
+entering LOOP
+ ~~~
+- דובב..
 
 #### Configuring TPMS advanced to recieve BLE data from TPMS SDR:
 - Install [TPMS Advanced](https://github.com/VincentMasselis/TPMS-advanced/tree/dedad01dee84f4cdff2c9a677efd3221a9e1d25d) from [Play](https://play.google.com/store/apps/details?id=com.masselis.tpmsadvanced) store.
