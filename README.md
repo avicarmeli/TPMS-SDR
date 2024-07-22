@@ -55,7 +55,7 @@ See wiering diagram in [DOCS](https://github.com/avicarmeli/TPMS-SDR/blob/main/D
 - If there are any errors follow the messages (most likely it is missing library).
 - Depend on the board you use you might need to manually put your board into upload mode (usually holding both push buttons then releasing the reset butteon and only after a second or so the other button).
 - When upload is done you might need to reset the board again.
-- Succssesfull run will yield the next out put:
+- Successful run will yield the next output:
 
 ~~~
 STARTING...
